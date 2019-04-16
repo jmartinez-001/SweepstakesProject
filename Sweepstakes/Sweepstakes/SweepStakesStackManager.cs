@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sweepstakes
+namespace Sweepstakes 
 {
-    class SweepStakesStackManager
+    class SweepStakesStackManager : ISweepStakesManager
     {
+        Stack<Sweepstakes> stackSweepstakes = new Stack<Sweepstakes>();
+
+
     }
 }
