@@ -47,13 +47,26 @@ namespace Sweepstakes
                 emailAddress = value;
             }
         }
-        int RegistrationNumber;
-
-        public Contestant(string firstName, string lastName, string emailAddress)
+        private int registrationNumber;
+        public int RegistrationNumber
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.emailAddress = emailAddress;
+            get
+            {
+                return registrationNumber;
+            }
+
+            set
+            {
+                registrationNumber = value;
+            }
+        }
+
+        public Contestant(string FirstName, string LastName, string EmailAddress)
+        {
+            this.firstName = FirstName;
+            this.lastName = LastName;
+            this.emailAddress = EmailAddress;
+            int RegistrationNumber;
         }
     }
 }

@@ -10,6 +10,11 @@ namespace Sweepstakes
     {
         Stack<Sweepstakes> stackSweepstakes = new Stack<Sweepstakes>();
 
+        public SweepStakesStackManager()
+        {
+
+        }
+
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
             stackSweepstakes.Push(sweepstakes);
@@ -19,6 +24,7 @@ namespace Sweepstakes
         {
             return stackSweepstakes.Pop();
         }
+        
 
     }
 }

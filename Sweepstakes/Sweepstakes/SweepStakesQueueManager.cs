@@ -10,6 +10,10 @@ namespace Sweepstakes
     {
         Queue<Sweepstakes> queueSweepStakes = new Queue<Sweepstakes>();
 
+        public SweepStakesQueueManager()
+        {
+
+        }
 
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
@@ -20,7 +24,7 @@ namespace Sweepstakes
         {
             
             return queueSweepStakes.Dequeue();
-        }
+        }        
 
 
     }

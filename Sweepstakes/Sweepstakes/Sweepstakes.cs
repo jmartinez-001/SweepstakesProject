@@ -14,22 +14,47 @@ namespace Sweepstakes
 
         public Sweepstakes(string name)
         {
-
+            this.name = name;
 
         
-        }
+        }        
 
         public void RegisterContestant(Contestant contestant)
         {
-            Contestants.Add(RegistrationNumber, contestant);
+            
+            
+            Contestants.Add(RegistrationNumber(), contestant);
+            
 
         }
-        
-        string PickWinner()
+
+        private int RegistrationNumber()
         {
 
+            int RegistrationNumber = Contestants.Count + 1;
+            return RegistrationNumber;
+
         }
+
+        public string PickWinner()
+        {
+            int winningNumber = GetRandom();
+            IUser contestWinner = Contestants[winningNumber];
+            return ($"{contestWinner.FirstName}{contestWinner.LastName} is the lucky winner of the {this.name} sweepstakes!");
+
+        }
+
+        private int GetRandom()
+        {
+            Random rnd = new Random();
+            int randomNumber = rnd.Next(1, Contestants.Count + 1);
+            return randomNumber;
+            
+
+        }
+
         
+
         void PrintContestantInfo(Contestant contestant)
         {
 
