@@ -21,7 +21,7 @@ namespace Sweepstakes
 
         public void RegisterContestant(Contestant contestant)
         {
-            Contestants.Add(int, contestant);
+            Contestants.Add(RegistrationNumber, contestant);
 
         }
         

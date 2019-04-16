@@ -11,5 +11,17 @@ namespace Sweepstakes
         Queue<Sweepstakes> queueSweepStakes = new Queue<Sweepstakes>();
 
 
+        public void InsertSweepstakes(Sweepstakes sweepstakes)
+        {
+            queueSweepStakes.Enqueue(sweepstakes);
+        }
+
+        public Sweepstakes getSweepstakes()
+        {
+            
+            return queueSweepStakes.Dequeue();
+        }
+
+
     }
 }
