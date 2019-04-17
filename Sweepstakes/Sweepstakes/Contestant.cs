@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    class Contestant : IUser
+    class Contestant : IUser , ISubscriber
     {
         private string firstName;
         public string FirstName
@@ -69,9 +69,16 @@ namespace Sweepstakes
             this.registrationNumber = RegistrationNumber;
         }
 
-        public void Notify(IUser user)
+        public void Notify(ISubscriber subscriber, string name)
         {
-
+            if ($"{subscriber.FirstName}{subscriber.LastName}" != name)
+            {
+                Console.WriteLine("{0}{1}, thank you for entering the sweepstakes, {2} is the winner!", subscriber.FirstName, subscriber.LastName, name);
+            }
+            else
+            {
+                Console.WriteLine("Congratulations, {0} you are the winner!", name);
+            }
         }
     }
 }

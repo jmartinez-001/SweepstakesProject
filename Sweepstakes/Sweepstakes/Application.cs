@@ -17,14 +17,14 @@ namespace Sweepstakes
 
         public void Run()
         {
-            SetupManagemenType();
+            SetupManagementType();
             CreateSweepstakes();
             DecisionTree();
             
 
             
         }
-        public void SetupManagemenType()
+        public void SetupManagementType()
         {
             
             ISweepStakesManager manager = ManagerFactory.ChooseManager();

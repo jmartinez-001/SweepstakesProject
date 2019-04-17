@@ -42,9 +42,6 @@ namespace Sweepstakes
             return info;
         }
 
-        public static void DecisionTree(Application application)
-        {
-           
-        }
+       
     }
 }
