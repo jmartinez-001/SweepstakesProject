@@ -66,7 +66,7 @@ namespace Sweepstakes
             this.firstName = FirstName;
             this.lastName = LastName;
             this.emailAddress = EmailAddress;
-            int RegistrationNumber;
+            this.registrationNumber = RegistrationNumber;
         }
 
         public void Notify(IUser user)

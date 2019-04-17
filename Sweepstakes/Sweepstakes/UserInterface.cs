@@ -29,5 +29,18 @@ namespace Sweepstakes
             return name;
         }
 
+        public static int GetNumberOfEntries()
+        {
+            int num;
+            num = int.Parse(UserInterface.GetString("Enter number of entries for sweepstakes."));
+            return num;
+        }
+
+        public static string GetContestantInfo(string value)
+        {
+            string info = GetString($"Enter {value}");
+            return info;
+        }
+
     }
 }

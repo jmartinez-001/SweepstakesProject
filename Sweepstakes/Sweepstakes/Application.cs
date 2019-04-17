@@ -34,12 +34,21 @@ namespace Sweepstakes
             string name = UserInterface.GetSweepstakesName();
             Sweepstakes sweepstakes = new Sweepstakes(name);
             myMarketingFirm.InsertSweepstakes(sweepstakes);
-            AddContestants();
+            AddContestants(sweepstakes);
 
         }
-        public void AddContestants()
+        public void AddContestants(Sweepstakes sweepstakes)
         {
-
+            int contestants = UserInterface.GetNumberOfEntries();
+            for (var i = 0; i < contestants; i++)
+            {
+                Contestant contestant;
+                string firstName = UserInterface.GetContestantInfo("First Name");
+                string lastName = UserInterface.GetContestantInfo("Last Name");
+                string emailAddress = UserInterface.GetContestantInfo("Email Address");
+                contestant = new Contestant(firstName, lastName, emailAddress);
+                sweepstakes.RegisterContestant(contestant);
+            }
         }
         public void DrawSweepstakes()
         {
