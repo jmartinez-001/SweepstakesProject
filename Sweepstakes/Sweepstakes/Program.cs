@@ -10,41 +10,42 @@ namespace Sweepstakes
     {
         static void Main(string[] args)
         {
-            Contestant JonJones = new Contestant("Jon", "Jones", "jon1@gmail.com");
-            Contestant JimJones = new Contestant("Jim", "Jones", "jim1@gmail.com");
-            Contestant MaryJones = new Contestant("Mary", "Jones", "mary1@gmail.com");
+            //Contestant JonJones = new Contestant("Jon", "Jones", "jon1@gmail.com");
+            //Contestant JimJones = new Contestant("Jim", "Jones", "jim1@gmail.com");
+            //Contestant MaryJones = new Contestant("Mary", "Jones", "mary1@gmail.com");
 
-            SweepStakesQueueManager Queue = new SweepStakesQueueManager();
-            SweepStakesStackManager Stack = new SweepStakesStackManager();
+            //SweepStakesQueueManager Queue = new SweepStakesQueueManager();
+            //SweepStakesStackManager Stack = new SweepStakesStackManager();
 
-            MarketingFirm OrangeFirm = new MarketingFirm(Stack);
-            MarketingFirm BlueFirm = new MarketingFirm(Queue);
-            
-            Sweepstakes WinIpad = new Sweepstakes("WinIpad");
-            Sweepstakes WinTV = new Sweepstakes("WinTV");
+            //MarketingFirm OrangeFirm = new MarketingFirm(Stack);
+            //MarketingFirm BlueFirm = new MarketingFirm(Queue);
 
-            OrangeFirm.InsertSweepstakes(WinIpad);
-            OrangeFirm.InsertSweepstakes(WinTV);
+            //Sweepstakes WinIpad = new Sweepstakes("WinIpad");
+            //Sweepstakes WinTV = new Sweepstakes("WinTV");
 
-            BlueFirm.InsertSweepstakes(WinIpad);
-            BlueFirm.InsertSweepstakes(WinTV);
+            //OrangeFirm.InsertSweepstakes(WinIpad);
+            //OrangeFirm.InsertSweepstakes(WinTV);
 
-            WinIpad.RegisterContestant(JonJones);
-            WinTV.RegisterContestant(JonJones);
-            WinIpad.RegisterContestant(JimJones);
-            WinIpad.RegisterContestant(MaryJones);
-            WinTV.RegisterContestant(MaryJones);
+            //BlueFirm.InsertSweepstakes(WinIpad);
+            //BlueFirm.InsertSweepstakes(WinTV);
 
-            Sweepstakes Drawing;
+            //WinIpad.RegisterContestant(JonJones);
+            //WinTV.RegisterContestant(JonJones);
+            //WinIpad.RegisterContestant(JimJones);
+            //WinIpad.RegisterContestant(MaryJones);
+            //WinTV.RegisterContestant(MaryJones);
 
-            Drawing = OrangeFirm.getSweepstakes();
-            Console.WriteLine(Drawing.PickWinner());
-            Drawing.PrintContestantInfo(JimJones);            
-            
-            Drawing = BlueFirm.getSweepstakes();
-            Console.WriteLine(Drawing.PickWinner());
-            Console.ReadLine();
-            //Console.WriteLine(WinTV.PickWinner());
+            //Sweepstakes Drawing;
+
+            //Drawing = OrangeFirm.getSweepstakes();
+            //Console.WriteLine(Drawing.PickWinner());
+            //Drawing.PrintContestantInfo(JimJones);            
+
+            //Drawing = BlueFirm.getSweepstakes();
+            //Console.WriteLine(Drawing.PickWinner());
+            //Console.ReadLine();
+            Application SweepstakesCreator = new Application();
+            SweepstakesCreator.Run();
 
         }
     }

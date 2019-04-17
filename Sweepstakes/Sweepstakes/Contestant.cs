@@ -68,5 +68,10 @@ namespace Sweepstakes
             this.emailAddress = EmailAddress;
             int RegistrationNumber;
         }
+
+        public void Notify(IUser user)
+        {
+
+        }
     }
 }

@@ -13,6 +13,8 @@ namespace Sweepstakes
         string EmailAddress { get; set; }
         int RegistrationNumber { get; set; }
 
+        void Notify(IUser user);
+
 
     }
 }
