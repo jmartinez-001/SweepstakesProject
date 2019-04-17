@@ -34,9 +34,13 @@ namespace Sweepstakes
             WinIpad.RegisterContestant(JimJones);
             WinIpad.RegisterContestant(MaryJones);
             WinTV.RegisterContestant(MaryJones);
+
             Sweepstakes Drawing;
+
             Drawing = OrangeFirm.getSweepstakes();
             Console.WriteLine(Drawing.PickWinner());
+            Drawing.PrintContestantInfo(JimJones);            
+            
             Drawing = BlueFirm.getSweepstakes();
             Console.WriteLine(Drawing.PickWinner());
             Console.ReadLine();

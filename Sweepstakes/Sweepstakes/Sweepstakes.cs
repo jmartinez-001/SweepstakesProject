@@ -17,7 +17,19 @@ namespace Sweepstakes
             this.name = name;
 
         
-        }        
+        }
+        
+        public IUser this[int index]
+        {
+            get
+            {
+                return Contestants[index];
+            }
+            set
+            {
+                Contestants[index] = value;
+            }
+        }
 
         public void RegisterContestant(Contestant contestant)
         {
@@ -39,8 +51,23 @@ namespace Sweepstakes
         public string PickWinner()
         {
             int winningNumber = GetRandom();
-            IUser contestWinner = Contestants[winningNumber];
-            return ($"{contestWinner.FirstName}{contestWinner.LastName} is the lucky winner of the {this.name} sweepstakes!");
+
+            Contestant contestWinner = CastAsContestant(Contestants[winningNumber], winningNumber);
+
+            string winner = ($"{contestWinner.FirstName}{contestWinner.LastName}");
+            
+
+            return winner;
+
+        }
+
+        private Contestant CastAsContestant(IUser contestant, int i)       
+        {
+            Contestant castedContestant = null;
+            Type userRole = Contestants[i].GetType();
+            castedContestant = (Contestant)Contestants[i];
+            return castedContestant;
+
 
         }
 
@@ -51,13 +78,13 @@ namespace Sweepstakes
             return randomNumber;
             
 
-        }
+        }        
 
-        
-
-        void PrintContestantInfo(Contestant contestant)
+        public void PrintContestantInfo(Contestant contestant)
         {
-
+            Console.WriteLine($"First Name:{contestant.FirstName}");
+            Console.WriteLine($"Last Name:{contestant.LastName}");
+            Console.WriteLine($"Email Address:{contestant.EmailAddress}");
         }
     }
 }
