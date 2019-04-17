@@ -18,15 +18,16 @@ namespace Sweepstakes
         public void Run()
         {
             SetupManagemenType();
-            CreateSweepstakes();            
-            DrawSweepstakes();
+            CreateSweepstakes();
+            DecisionTree();
+            
 
             
         }
         public void SetupManagemenType()
         {
-            string managerType = UserInterface.GetManagementType();
-            ISweepStakesManager manager = ManagerFactory.ChooseManager(managerType);
+            
+            ISweepStakesManager manager = ManagerFactory.ChooseManager();
             myMarketingFirm = new MarketingFirm(manager);
         }
         public void CreateSweepstakes()
@@ -34,10 +35,10 @@ namespace Sweepstakes
             string name = UserInterface.GetSweepstakesName();
             Sweepstakes sweepstakes = new Sweepstakes(name);
             myMarketingFirm.InsertSweepstakes(sweepstakes);
-            AddContestants(sweepstakes);
+            CreatePlusAddContestants(sweepstakes);
 
         }
-        public void AddContestants(Sweepstakes sweepstakes)
+        public void CreatePlusAddContestants(Sweepstakes sweepstakes)
         {
             int contestants = UserInterface.GetNumberOfEntries();
             for (var i = 0; i < contestants; i++)
@@ -52,8 +53,32 @@ namespace Sweepstakes
         }
         public void DrawSweepstakes()
         {
+            Sweepstakes Drawing = null;
+            Drawing = myMarketingFirm.getSweepstakes();
+            Console.WriteLine(Drawing.PickWinner());
 
         }
-        
+        public void DecisionTree()
+        {
+            string decision;
+            decision = UserInterface.GetString("'Create' another Sweepstakes,'Draw' a winner from list of Sweepstakes or 'Quit'?");
+            switch (decision)
+            {
+                case "Create":
+                    CreateSweepstakes();
+                    DecisionTree();
+                    break;
+                case "Draw":
+                    DrawSweepstakes();
+                    DecisionTree();
+                    break;
+                case "Quit":
+                    break;
+                default:
+                    DecisionTree();
+                    break;
+            }
+        }
+
     }
 }

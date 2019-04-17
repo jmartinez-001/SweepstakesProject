@@ -18,21 +18,21 @@ namespace Sweepstakes
         public static string GetManagementType()
         {
             string managerType;
-            managerType = UserInterface.GetString("How would you like to manage the Sweepstakes'? Choose 'Queue', first in first out; or 'Stack', last in first out.");
+            managerType = GetString("How would you like to manage the Sweepstakes'? Choose 'Queue', first in first out; or 'Stack', last in first out.");
             return managerType;
         }
 
         public static string GetSweepstakesName()
         {
             string name;
-            name = UserInterface.GetString("Enter name of sweepstakes to create. (Format: Win(enter giveaway)).");
+            name = GetString("Enter name of sweepstakes to create. (Format: Win(enter giveaway)).");
             return name;
         }
 
         public static int GetNumberOfEntries()
         {
             int num;
-            num = int.Parse(UserInterface.GetString("Enter number of entries for sweepstakes."));
+            num = int.Parse(GetString("Enter number of entries for sweepstakes."));
             return num;
         }
 
@@ -42,5 +42,9 @@ namespace Sweepstakes
             return info;
         }
 
+        public static void DecisionTree(Application application)
+        {
+           
+        }
     }
 }
