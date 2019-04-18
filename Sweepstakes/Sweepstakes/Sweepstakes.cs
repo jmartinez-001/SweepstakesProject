@@ -35,7 +35,8 @@ namespace Sweepstakes
         {
             int registrationNumber = RegistrationNumber();
             contestant.RegistrationNumber = registrationNumber;
-            Contestants.Add(registrationNumber, contestant);          
+            Contestants.Add(registrationNumber, contestant);
+            Subscribe(contestant);
            
         }
 
